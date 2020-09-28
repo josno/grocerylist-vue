@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+        /* resets */
+        * {
+            color: inherit;
+        }
+
+        input {
+            font: inherit;
+            border: unset;
+            background: unset;
+        }
+
+        input:focus {
+            outline: unset;
+        }
+
+        :root {
+            font: 0.5em "BlinkMacSystemFont", -apple-system, "Roboto", sans-serif;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            padding-top: 50px;
+            width: 100vw;
+            height: 100vh;
+            font-weight: 500;
+            font-size: 1.8rem;
+            color: #0C322E;
+            background: #FFFFFF;
+        }
+
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            text-align: center;
+            width: 30%;
+        }
+
+        ul {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .list-item {
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .list-item:nth-child(3n+1) {
+            background: #f9b4ed;
+        }
+
+        .list-item:nth-child(3n+2) {
+            background: #eabaf6;
+        }
+
+        .list-item:nth-child(3n+3) {
+            background: #dabfff;
+        }
+
+        .list-item:nth-child(3n+4) {
+            background: #c4c7ff;
+        }
+
+        .list-item:nth-child(3n+5) {
+            background: #adcfff;
+        }
+
+        .list-item:hover {
+            transform: scale(1.2);
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        /* f9b4ed-eabaf6-dabfff-c4c7ff-adcfff */
+
+        button {
+            border: none;
+            border-radius: 5px;
+            box-shadow: 3px 3px 15px lightgrey;
+            background-color: #FFBF69;
+            padding: 10px;
+            margin: 10px;
+            width: 100px;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app" @keyup.enter="addToList(groceryItem)">
+
+        <input placeholder="Submit a grocery item" type="text" v-model="groceryItem"></input>
+        <button v-on:click="addToList(groceryItem)">Add</button>
+        <ul class='list-container'>
+            <li class="list-item" v-for="item in list" :key="item" v-on:click="removeItem(item)">
+                {{ item }}
+            </li>
+        </ul>
+
+    </div>
+
+
+
+    </div>
+</body>
+<script>
+
+    const makeList = (list) => {
+        console.log(list.split(','))
+        return !inputText ? '' : list.split(',')
+    }
+
+
+    var app = new Vue({
+        el: " #app", data: {
+            groceryItem: "",
+            list: [],
+            flashCardMode: false
+        },
+        methods: {
+            addToList(item) {
+                if (!item) { return; }
+                this.list.push(item)
+                this.groceryItem = ""
+            }, removeItem(item) {
+                const newList = this.list.filter(i => i !== item)
+                this.list = newList
+            }
+        }
+    }) </script>
+
+</html>
