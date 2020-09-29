@@ -1,0 +1,102 @@
+/* resets */
+* {
+	color: inherit;
+}
+
+input {
+	font: inherit;
+	border: unset;
+	background: unset;
+	margin: 10px;
+}
+
+input:focus {
+	outline: unset;
+}
+
+:root {
+	font: 0.5em "BlinkMacSystemFont", -apple-system, "Roboto", sans-serif;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+	padding-top: 50px;
+	width: 100vw;
+	height: 100vh;
+	font-weight: 500;
+	font-size: 1.8rem;
+	color: #0c322e;
+	background: #ffffff;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+input {
+	text-align: center;
+	width: 30%;
+}
+
+ul {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.list-item {
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+	list-style: none;
+}
+
+.list-item:nth-child(3n + 1) {
+	background: #f9b4ed;
+}
+
+.list-item:nth-child(3n + 2) {
+	background: #eabaf6;
+}
+
+.list-item:nth-child(3n + 3) {
+	background: #dabfff;
+}
+
+.list-item:nth-child(3n + 4) {
+	background: #c4c7ff;
+}
+
+.list-item:nth-child(3n + 5) {
+	background: #adcfff;
+}
+
+.list-item:hover {
+	transform: scale(1.2);
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+/* f9b4ed-eabaf6-dabfff-c4c7ff-adcfff */
+
+button {
+	border: none;
+	border-radius: 5px;
+	box-shadow: 3px 3px 15px lightgrey;
+	background-color: #ffbf69;
+	padding: 10px;
+	margin: 10px;
+	width: 100px;
+}
+
+button:hover {
+	cursor: pointer;
+}
